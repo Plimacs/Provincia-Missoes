@@ -1,0 +1,94 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+conversations:
+ lumira:
+  quester: Lumira Cozinheira
+  first: lumira-quest01, lumira-quest01b, lumira-quest02, lumira-sim2b_1
+  NPC_options:
+   lumira-quest01:
+     text: Prazer! me chamo Lumira, e vou te ajudar a fazer esse bolo! tem alguma experiencia
+       com cozinha?
+     pointer: lumira-resp1_1, lumira-resp1_2, lumira-resp1_3, lumira-resp1_4
+     conditions: trigo_end, !bolo, !bolo_volta
+   lumira-sim1_1:
+     text: Fica tranquilo(a), não e tão dificil assim. para simplificar a sua vida,
+       a receita do bolo está em cima da bancada, basta fazer como está lá, quando
+       acabar venha falar comigo.
+     event: tag_bolo
+   lumira-sim1_2:
+     text: Eita! mil desculpas chefe %player%! vai ser brincadeira pra você! a receita
+       do bolo está em cima da bancada, basta fazer como está lá, quando acabar venha
+       falar comigo.
+     event: tag_bolo
+   lumira-nao1_1:
+     text: Tudo bem, quando estiver pronto(a) me procure!
+     event: tag_bolo_volta
+   lumira-quest01b:
+     text: Agora que você voltou vamos por a mão na massa! vc tem alguma experiencia
+       com cozinha?
+     pointer: lumira-resp1_1, lumira-resp1_2, lumira-resp1_3, lumira-resp1_4
+     conditions: bolo_volta, !bolo_end
+   lumira-quest02:
+     text: O bolo está pronto? o patrão está com fome!
+     pointer: lumira-resp2_1, lumira-resp2_2, lumira-resp2_3, lumira-resp2_4
+     conditions: trigo_end, !bolo_end
+   lumira-sim2_1:
+     text: Huummm! Só pelo cheiro parece delicioso, com esse bolo aqui o patrão te
+       contrata com toda certeza!
+     pointer: lumira-resp2b_1, lumira-resp2b_2, lumira-resp2b_3
+   lumira-nao2_1:
+     text: O patrão está com fome, faça esse bolo o quanto antes!
+   lumira-sim2b_1:
+     text: Vai com tudo! Entegue esse bolo ao nosso patrão. estou torcendo por você!
+     event: tag_bolo_end
+     conditions: trigo_end, !deu_bolo
+
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+    lumira-resp1_1:
+      text: Apenas o básico.
+      pointer: lumira-sim1_1
+      event: dar_trigo_bolo, dar_ovo_bolo, dar_leite_bolo, dar_acucar_bolo
+    lumira-resp1_2:
+      text: Prazer, Chefe %player%.
+      pointer: lumira-sim1_2
+      event: dar_trigo_bolo, dar_ovo_bolo, dar_leite_bolo, dar_acucar_bolo
+    lumira-resp1_3:
+      text: Nenhuma, nem fritar ovo.
+      pointer: lumira-sim1_1
+      event: dar_trigo_bolo, dar_ovo_bolo, dar_leite_bolo, dar_acucar_bolo
+    lumira-resp1_4:
+      text: Ainda não estou pronto(a).
+      pointer: lumira-nao1_1
+    lumira-resp2_1:
+      text: Sim! aqui está.
+      pointer: lumira-sim2_1
+      conditions: tem_bolo
+    lumira-resp2_2:
+      text: Aqui, o melhor bolo que você já viu.
+      pointer: lumira-sim2_1
+      conditions: tem_bolo
+    lumira-resp2_3:
+      text: Não sei se dá pra chamar isso de bolo...
+      pointer: lumira-sim2_1
+      conditions: tem_bolo
+    lumira-resp2_4:
+      text: ainda não...
+      pointer: lumira-nao2_1
+    lumira-resp2b_1:
+      text: Tomara!
+      pointer: lumira-sim2b_1
+    lumira-resp2b_2:
+      text: Não estou muito confiante...
+      pointer: lumira-sim2b_1
+    lumira-resp2b_3:
+      text: O que vale e a intenção, né? hahaha!
+      pointer: lumira-sim2b_1

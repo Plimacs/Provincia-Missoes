@@ -1,0 +1,168 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+conversations:
+ leonar:
+  quester: Leonar Peão
+  first: leonar-inicio3, leonar-sim02, leonar-tem_os_ovos, leonar-sim41, leonar-trabalho, leonar-trabalhoConcluir
+  NPC_options:
+   leonar-inicio3:
+     text: Seja bem-vindo ao galinheiro! Eu me chamo Leonar e vou te ajudar com os
+       ovos.
+     pointer: leonar-sim01, leonar-sim02, leonar-nao01
+     event: take_RLeonar
+     conditions: leonar, !quest_leonar
+   leonar-sim01:
+     text: É bem simples, basta levantar a galinha e pegar os ovos, vou te dar uma dica
+       valiosa. fala "cococó cococó" enquanto estiver mexendo nelas,isso deixa elas
+       mais tranquilas.
+     pointer: leonar-sim12, leonar-sim13, leonar-nao11
+   leonar-sim02:
+     text: Para de graça, o assunto é serio! Podemos continuar? ou vai ficar de gracinha?
+     pointer: leonar-sim31, leonar-sim32, leonar-nao31
+     conditions: graca, !quest_leonar
+   leonar-sim11:
+     text: Boa sorte! e não esqueça de falar "cococó cococó".
+     event: tag_quest_leonar
+   leonar-sim12:
+     text: Basta levantar a galinha e pegas os ovos, falar "cococó cococó" deixa elas
+       irritadas, então é melhor você pegar os ovos em silêncio
+     event: tag_quest_leonar
+   leonar-tem_os_ovos:
+     text: Conseguiu os ovos?
+     conditions: quest_leonar, !ovos_end
+     pointer: leonar-sim_ovo, leonar-sim_ovo2, leonar-sim_ovo3, leonar-sim_ovo4, leonar-nao_ovo
+   leonar-sim41:
+     text: Agora você deve procurar o Pirineu, o nosso agricultor.
+     event: give_RPirineu, tag_pirineu
+     conditions: ovos_end, !trigo
+   leonar-sim42:
+     text: Você não deve ter dito "cococó", eu ainda avisei pra falar.
+     pointer: leonar-resp1, leonar-resp2, leonar-resp3
+   leonar-nao42:
+     text: Então volte lá e pegue os ovos!
+   leonar-sim51:
+     text: HAHAHAHA sério? me lembro de ter dito para falar "cococó", Isso que dá não
+       levar a explicação a sério!
+     event: tag_ovos_end
+   
+   leonar-trabalho:
+     text: Hoje as penosas estão todas botando, perfeito pra pegar ovos!
+     pointer: leonar-resp01, leonar-resp02, leonar-resp03, leonar-resp04
+     conditions: contratado, !Missao1ovos, !Missao5ovos, !Missao10ovos
+   leonar-nao01:
+     text: Tudo bem, estou aqui todos os dias!
+   
+   leonar-trabalhoConcluir:
+     text: As penosas foram educadas? e você já pegou os ovos?
+     pointer: leonar-resp01-1, leonar-resp02-1, leonar-resp03-1, leonar-resp04-1
+     conditions: contratado
+   leonar-nao01-1:
+     text: vá logo, não espere os ovos chocarem!
+   
+   leonar-concluido1:
+     text: Apenas um? tudo bem. tudo bem. Uma moeda de cobre, como combinado.
+   leonar-concluido2:
+     text: Cinco ovos? tudo bem. Cinco moedas de cobre, como combinado.
+   leonar-concluido3:
+     text: Dez ovos? tudo bem. Dez moedas de cobre, como combinado.
+
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+    leonar-sim01:
+      text: Beleza! o que eu tenho que fazer?
+      pointer: leonar-sim01
+    leonar-sim02:
+      text: Como é o negocio aí? tu vai me ajudar com oque?
+      pointer: leonar-sim02
+      event: tag_graca
+    leonar-nao01:
+      text: Ainda não estou pronto(a)...
+      pointer: leonar-nao01
+    leonar-sim12:
+      text: Beleza!
+      pointer: leonar-sim11
+    leonar-sim13:
+      text: Molezinha!
+      pointer: leonar-sim11
+    leonar-nao11:
+      text: Sai fora, esse bicho vai moer meu dedo!
+      pointer: leonar-nao01
+    leonar-sim31:
+      text: Desculpa, prometo não fazer mais.
+      pointer: leonar-sim12
+    leonar-sim32:
+      text: Desculpa, é que a 5° Série bate forte as vezes
+      pointer: leonar-sim12
+    leonar-nao31:
+      text: Vou ficar de gracinha!
+      pointer: leonar-nao01
+    leonar-sim_ovo:
+      text: Sim! aqui estão!
+      conditions: ovos
+      event: tag_ovos_end, take_ovos
+      pointer: leonar-sim41
+    leonar-sim_ovo2:
+      text: Como eu disse, molezinha!
+      conditions: ovos
+      event: tag_ovos_end, take_ovos
+      pointer: leonar-sim41
+    leonar-sim_ovo3:
+      text: Aquelas coisas faltaram me comer vivo(a)!
+      conditions: ovos
+      event: tag_ovos_end, take_ovos
+      pointer: leonar-sim42
+    leonar-sim_ovo4:
+      text: Toma essa %$&@# aqui, Você Mentiu pra mim!
+      conditions: ovos, graca
+      event: tag_ovos_end, take_ovos
+      pointer: leonar-sim42
+    leonar-nao_ovo:
+      text: Ainda não..
+      pointer: leonar-nao42
+    leonar-resp1:
+      text: Eu achei que você tava me zoando...
+      pointer: leonar-sim51
+    leonar-resp2:
+      text: Tá de sacanagem? você não disse isso não.
+      pointer: leonar-sim51
+    leonar-resp3:
+      text: você falou para NÃO FALAR "cococó"!
+      pointer: leonar-sim51
+    leonar-resp01:
+      text: 2 ovos
+      event: tag_Missao1ovos
+    leonar-resp02:
+      text: 5 ovos
+      event: tag_Missao5ovos
+    leonar-resp03:
+      text: 10 ovos
+      event: tag_Missao10ovos
+    leonar-resp04:
+      text: Não tô afim de ver penas hoje.
+      pointer: leonar-nao01
+    leonar-resp01-1:
+      text: '*entregar ovos*'
+      conditions: 1ovos, Missao1ovos
+      event: deltag_Missao1ovos, take_1ovos, 1MoedaCobre
+      pointer: leonar-concluido1
+    leonar-resp02-1:
+      text: '*entregar ovos*'
+      conditions: 5ovos, Missao5ovos
+      event: deltag_Missao5ovos, take_5ovos, 5MoedaCobre
+      pointer: leonar-concluido2
+    leonar-resp03-1:
+      text: '*entregar ovos*'
+      conditions: 10ovos, Missao10ovos
+      event: deltag_Missao10ovos, take_10ovos, 10MoedaCobre
+      pointer: leonar-concluido3
+    leonar-resp04-1:
+      text: Ainda não...
+      pointer: leonar-nao01-1

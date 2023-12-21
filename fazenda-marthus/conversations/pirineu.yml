@@ -1,0 +1,120 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+conversations:
+ pirineu:
+  quester: Pirineu Agricultor
+  first: pirineu-quest01, pirineu-quest01b, pirineu-sim1_1, pirineu-quest02, pirineu-sim2_1, pirineu-trabalho, pirineu-trabalho-concluir, info
+  NPC_options:
+   pirineu-quest01:
+     text: Opá! então você que é o novo peão? vou te ajudar com o trigo!
+     event: take_RPirineu
+     pointer: pirineu-resp1_1, pirineu-resp1_2, pirineu-resp1_3, pirineu-resp1_4
+     conditions: ovos_end, !trigo_volta, !trigo
+   pirineu-sim1_1:
+     text: Fica tranquilo, dessa vez é facil! Basta pegar 64 ramos de trigo e trazer
+       pra mim.
+     event: tag_trigo
+     conditions: ovos_end, !trigo
+   pirineu-nao1_1:
+     text: Tudo bem, quando estiver pronto(a) me procure!
+     event: tag_trigo_volta
+   pirineu-quest01b:
+     text: Então voce voltou? agora é pra valer?
+     pointer: pirineu-resp1_1, pirineu-resp1_2, pirineu-resp1_3, pirineu-resp1_4
+     conditions: trigo_volta, !trigo
+   pirineu-quest02:
+     text: Conseguiu juntar os 64 ramos de trigo?
+     pointer: pirineu-resp2_1, pirineu-resp2_2, pirineu-resp2_3
+     conditions: ovos_end, !trigo_end
+   pirineu-sim2_1:
+     text: Tudo pronto! agora é só falar com a nossa cozinheira Lumira, elá está te
+       esperando na cozinha...
+     event: tag_trigo_end
+     conditions: ovos_end, !bolo
+   pirineu-nao2_1:
+     text: Então oque você está fazendo aqui? ao trabalho, vamos!
+   pirineu-trabalho:
+     text: O plantiu está bem bonito hoje, perfeito para colher!
+     pointer: pirineu-resp01a, pirineu-resp02a, pirineu-resp03a, pirineu-resp04a
+     conditions: contratado, !Missao16trigos, !Missao32trigos, !Missao64trigos
+   pirineu-nao01a:
+     text: Tudo bem, estou aqui todos os dias!
+   pirineu-trabalho-concluir:
+     text: Trigo colhido?
+     pointer: pirineu-resp01-1a, pirineu-resp02-1a, pirineu-resp03-1a, pirineu-resp04-1a
+     conditions: contratado
+   pirineu-nao01-1a:
+     text: Tudo bem, só não deixe passar do tempo! 
+   pirineu-concluido1a:
+     text: 16 Raminhos? tudo bem. tudo bem. 8 moeda de cobre, como combinado.
+   pirineu-concluido2a:
+     text: 32 Ramos de trigo? tudo bem. 16 moedas de cobre, como combinado.
+   pirineu-concluido3a:
+     text: 64 Ramos de trigo? tudo bem. 32 moedas de cobre, como combinado.
+   info:
+     text: Você trabalha aqui? se quiser trabalhar aqui, siga essa estrada até o topo da colina, entre na casa e fale com Marthus.
+
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+    pirineu-resp1_1:
+      text: Vamos lá, o que eu tenho que fazer?
+      pointer: pirineu-sim1_1
+    pirineu-resp1_2:
+      text: Por favor nada muito complicado, eu tô pra desistir.
+      pointer: pirineu-sim1_1
+    pirineu-resp1_3:
+      text: Vou tomar uma água antes...
+      pointer: pirineu-nao1_1
+    pirineu-resp1_4:
+      text: Ainda não estou pronto(a).
+      pointer: pirineu-nao1_1
+    pirineu-resp2_1:
+      text: Sim, aqui está!
+      pointer: pirineu-sim2_1
+      conditions: trigos
+      event: take_trigo
+    pirineu-resp2_2:
+      text: Dessa vez foi fácil.
+      pointer: pirineu-sim2_1
+      conditions: trigos
+      event: take_trigo
+    pirineu-resp2_3:
+      text: Ainda não...
+      pointer: pirineu-nao2_1
+    pirineu-resp01a:
+      text: 16 trigos
+      event: tag_Missao16trigos
+    pirineu-resp02a:
+      text: 32 trigos
+      event: tag_Missao32trigos
+    pirineu-resp03a:
+      text: 64 trigos
+      event: tag_Missao64trigos
+    pirineu-resp04a:
+      text: Não tô afim de colher trigo hoje.
+      pointer: pirineu-nao01a
+    pirineu-resp01-1a:
+      text: '*entregar trigos*'
+      conditions: 16trigos, Missao16trigos
+      event: deltag_Missao16trigos, take_16trigos, 8MoedaCobre
+      pointer: pirineu-concluido1a
+    pirineu-resp02-1a:
+      text: '*entregar trigos*'
+      conditions: 32trigos, Missao32trigos
+      event: deltag_Missao32trigos, take_32trigos, 16MoedaCobre
+      pointer: pirineu-concluido2a
+    pirineu-resp03-1a:
+      text: '*entregar trigos*'
+      conditions: 64trigos, Missao64trigos
+      event: deltag_Missao64trigos, take_64trigos, 32MoedaCobre
+      pointer: pirineu-concluido3a
+    pirineu-resp04-1a:
+      text: Ainda não...
+      pointer: pirineu-nao01-1a

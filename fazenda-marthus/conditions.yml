@@ -1,0 +1,54 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+conditions:
+ dovis: tag dovis
+ froxo: tag froxo
+ pirineu: tag pirineu
+ quest_dovis: tag quest_dovis
+ leonar: tag leonar
+ quest_dovis_end: tag quest_dovis_end
+ graca: tag graca
+ tag_ovo: tag ovo
+ ovos: item ovos:5
+ balde_mao: hand balde
+ vaca: tag vaca
+ vaca_end: tag vaca_end
+ quest_leonar: tag quest_leonar
+ galinha_deu_ovos: tag galinha_deu_ovos
+ ovos_end: tag ovos_end
+ trigo_volta: tag trigo_volta
+ trigo: tag trigo
+ trigos: item trigos:64
+ trigo_end: tag trigo_end
+ bolo: tag bolo
+ bolo_volta: tag bolo_volta
+ tem_bolo: item bolo:1
+ balde_leite: item balde_leite:1
+ bolo_end: tag bolo_end
+ contratado: tag contratado
+ deu_bolo: tag deu_bolo
+ Missao2Leite: tag Missao2Leite
+ Missao10Leite: tag Missao10Leite
+ Missao20Leite: tag Missao20Leite
+ 2leite: item balde_leite:2
+ 10leite: item balde_leite:10
+ 20leite: item balde_leite:20
+ Missao1ovos: tag Missao1ovos
+ Missao5ovos: tag Missao5ovos
+ Missao10ovos: tag Missao10ovos
+ 1ovos: item ovos:1
+ 5ovos: item ovos:5
+ 10ovos: item ovos:10
+ Missao16trigos: tag Missao16trigos
+ Missao32trigos: tag Missao32trigos
+ Missao64trigos: tag Missao64trigos
+ 16trigos: item trigos:16
+ 32trigos: item trigos:32
+ 64trigos: item trigos:64

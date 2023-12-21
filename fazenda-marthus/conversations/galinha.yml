@@ -1,0 +1,46 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+conversations:
+ galinha:
+  quester: galinha
+  first: galinha-inicio
+  NPC_options:
+   galinha-inicio:
+     text: CO CO CO CÓÓÓ?
+     conditions: quest_leonar, !galinha_deu_ovos
+     pointer: galinha-nao01, galinha-nao02, galinha-nao03, galinha-sim01, galinha-nao04
+   galinha-nao:
+     text: '*A galinha não gosta do que você faz e te pica*'
+   galinha-sim:
+     text: Có! cococó
+     conditions: quest_leonar, !galinha_deu_ovos
+     event: ovos, tag_galinha_deu_ovos
+
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+    galinha-nao01:
+      text: '*Pegar os ovos em silêncio*'
+      pointer: galinha-nao
+      conditions: quest_leonar, !galinha_deu_ovos
+    galinha-nao02:
+      text: '*Pegar os ovos furtivamente*'
+      pointer: galinha-nao
+      conditions: quest_leonar, !galinha_deu_ovos
+    galinha-nao03:
+      text: '*Segurar no pescoço da galinha enquanto pega os ovos*'
+      pointer: galinha-nao
+      conditions: quest_leonar, !galinha_deu_ovos
+    galinha-nao04:
+      text: Acho melhor sair daqui enquanto estou vivo!
+    galinha-sim01:
+      text: '*Falar "cococó cococó"*'
+      pointer: galinha-sim
+      conditions: quest_leonar, !galinha_deu_ovos

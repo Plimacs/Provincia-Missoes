@@ -1,0 +1,84 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+events:
+ tag_dovis: tag add dovis
+ tag_pirineu: tag add pirineu
+ tag_froxo: tag add froxo
+ dar_balde: give balde:1
+ tag_quest_dovis: tag add quest_dovis
+ tag_leonar: tag add leonar
+ tag_quest_dovis_end: tag add quest_dovis_end
+ tag_graca: tag add graca
+ ovos: give ovos:5
+ take_ovos: take ovos:5
+ tag_ovo: tag add ovo
+ tag_vaca: tag add vaca
+ take_balde_leite: take balde_leite:1
+ tag_vaca_end: tag add vaca_end
+ tag_quest_leonar: tag add quest_leonar
+ tag_galinha_deu_ovos: tag add galinha_deu_ovos
+ tag_ovos_end: tag add ovos_end
+ tag_trigo_volta: tag add trigo_volta
+ tag_trigo: tag add trigo
+ take_trigo: take trigos:64
+ tag_trigo_end: tag add trigo_end
+ tag_bolo: tag add bolo
+ tag_bolo_volta: tag add bolo_volta
+ take_bolo: take bolo:1
+ dar_bolo: give bolo:1
+ dar_trigo_bolo: give trigos:3
+ dar_ovo_bolo: give ovos:1
+ dar_leite_bolo: give balde_leite:3
+ dar_acucar_bolo: give acucar:2
+ tag_bolo_end: tag add bolo_end
+ tag_contratado: tag add contratado
+ tag_deu_bolo: tag add deu_bolo
+ 1MoedaCobre: give MoedaCobre:1
+ 5MoedaCobre: give MoedaCobre:5
+ 10MoedaCobre: give MoedaCobre:10
+ tag_Missao2Leite: tag add Missao2Leite
+ tag_Missao10Leite: tag add Missao10Leite
+ tag_Missao20Leite: tag add Missao20Leite
+ deltag_Missao2Leite: tag del Missao2Leite
+ deltag_Missao10Leite: tag del Missao10Leite
+ deltag_Missao20Leite: tag del Missao20Leite
+ give_2balde: give balde:2
+ give_10balde: give balde:10
+ give_20balde: give balde:20
+ take_2leite: take balde_leite:2
+ take_10leite: take balde_leite:10
+ take_20leite: take balde_leite:20
+ tag_Missao1ovos: tag add Missao1ovos
+ tag_Missao5ovos: tag add Missao5ovos
+ tag_Missao10ovos: tag add Missao10ovos
+ deltag_Missao1ovos: tag del Missao1ovos
+ deltag_Missao5ovos: tag del Missao5ovos
+ deltag_Missao10ovos: tag del Missao10ovos
+ take_1ovos: take ovos:1
+ take_5ovos: take ovos:5
+ take_10ovos: take ovos:10
+ tag_Missao16trigos: tag add Missao16trigos
+ tag_Missao32trigos: tag add Missao32trigos
+ tag_Missao64trigos: tag add Missao64trigos
+ deltag_Missao16trigos: tag del Missao16trigos
+ deltag_Missao32trigos: tag del Missao32trigos
+ deltag_Missao64trigos: tag del Missao64trigos
+ take_16trigos: take trigos:16
+ take_32trigos: take trigos:32
+ take_64trigos: take trigos:64
+ 8MoedaCobre: give MoedaCobre:8
+ 16MoedaCobre: give MoedaCobre:16
+ 32MoedaCobre: give MoedaCobre:32
+ give_RDovis: command ei give %player% Rastreador_Dovis
+ take_RDovis: command ei take %player% Rastreador_Dovis 64
+ give_RPirineu: command ei give %player% Rastreador_Pirineu
+ take_RPirineu: command ei take %player% Rastreador_Pirineu 64
+ give_RLeonar: command ei give %player% Rastreador_Leonar
+ take_RLeonar: command ei take %player% Rastreador_Leonar 64

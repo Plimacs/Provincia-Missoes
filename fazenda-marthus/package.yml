@@ -1,0 +1,121 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+npcs:
+  '10': marthus
+  '4': dovis
+  '5': leonar
+  '6': galinha
+  '13': pirineu
+  '11': lumira
+tag_point_prefix: 'false'
+enabled: false
+
+items:  
+ quest_marker_available: GOLD_INGOT custom-model-data:33
+ quest_marker_incomplete: IRON_INGOT custom-model-data:63
+ quest_marker_complete: GOLD_INGOT custom-model-data:63
+ quest_marker_future: IRON_INGOT custom-model-data:33
+ balde: BUCKET
+ balde_leite: MILK_BUCKET
+ ovos: EGG
+ trigos: WHEAT
+ bolo: CAKE
+ acucar: SUGAR
+ MoedaCobre: RAW_COPPER
+ busula: AIR durability:-1
+
+
+npc_holograms:
+  check_inverval: 1
+  follow: true
+  disabled: false
+
+  # 
+  marthus-missao-disponivel:
+    lines:
+      - "#icon: GOLD_INGOT {CustomModelData:33}"
+    vector: 0;0;0
+    conditions: "!contratado,!dovis"
+    npcs:
+      - '10'
+  marthus-missao-incompleta:
+    lines:
+      - "#icon: IRON_INGOT {CustomModelData:33}"
+    vector: 0;0;0
+    conditions: "!contratado,dovis"
+    npcs:
+      - '10'
+      
+      
+  dovis-missao-disponivel:
+    lines:
+      - "#icon: GOLD_INGOT {CustomModelData:33}"
+    vector: 0;0;0
+    conditions: "!contratado,dovis,!quest_dovis_end"
+    npcs:
+      - '4'
+  dovis-missao-incompleta:
+    lines:
+      - "#icon: IRON_INGOT {CustomModelData:33}"
+    vector: 0;0;0
+    conditions: "!contratado,quest_dovis,!quest_dovis_end"
+    npcs:
+      - '4'
+      
+      
+  leonar-missao-disponivel:
+    lines:
+      - "#icon: GOLD_INGOT {CustomModelData:33}"
+    vector: 0;0;0
+    conditions: "!contratado,leonar,!quest_leonar"
+    npcs:
+      - '5'
+  leonar-missao-incompleta:
+    lines:
+      - "#icon: IRON_INGOT {CustomModelData:33}"
+    vector: 0;0;0
+    conditions: "!contratado,quest_leonar,!ovos_end"
+    npcs:
+      - '5'    
+      
+      
+  Pirineu-missao-disponivel:
+    lines:
+      - "#icon: GOLD_INGOT {CustomModelData:33}"
+    vector: 0;0;0
+    conditions: "!contratado,pirineu,!trigo"
+    npcs:
+      - '13'
+  Pirineu-missao-incompleta:
+    lines:
+      - "#icon: IRON_INGOT {CustomModelData:33}"
+    vector: 0;0;0
+    conditions: "!contratado,trigo,!trigo_end"
+    npcs:
+      - '13'   
+      
+      
+  Lumira-missao-disponivel:
+    lines:
+      - "#icon: GOLD_INGOT {CustomModelData:33}"
+    vector: 0;0;0
+    conditions: "!contratado,trigo_end,!bolo"
+    npcs:
+      - '11'
+  Lumira-missao-incompleta:
+    lines:
+      - "#icon: IRON_INGOT {CustomModelData:33}"
+    vector: 0;0;0
+    conditions: "!contratado,bolo,!bolo_end"
+    npcs:
+      - '11'   
+  
+#hide_npcs:
+#  2: sucess

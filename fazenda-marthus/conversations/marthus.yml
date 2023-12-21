@@ -1,0 +1,162 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+conversations:
+ marthus:
+  quester: Marthus Fazendeiro
+  first: marthus-inicio, marthus-quest1, marthus-quest02, marthus-sim2_1, marthus-duvida
+  NPC_options:
+   marthus-inicio:
+     text: Então você quer trabalhar na fazenda?
+     pointer: marthus-sim, marthus-nao
+     conditions: '!dovis'
+   marthus-missao:
+     text: Eu posso lhe pagar uma boa quantia se puder trabalhar para mim, saiba que
+       a vida de um peão não é facil, você tem certeza que pode trabalahar aqui na
+       fazenda?
+     pointer: marthus-sim2, marthus-tenta, marthus-nao
+   marthus-claro:
+     text: Assim que eu gosto! um peão bem otimosta sempre se da bem! antes de começar
+       eu preciso que você me mostre que tem fibra para trabalhar aqui na fazenda.
+       Faça um bolo!
+     pointer: marthus-ja, marthus-moleza, marthus-nao2
+   marthus-nao1:
+     text: Tudo bem, quando mudar de ideia volte aqui. precisamos de bons peões!
+   marthus-sim2:
+     text: Você parece meio inseguro, Vamos ver se você tem fibra pra trabalhar aqui
+       na fazenda, Faça um bolo!
+     pointer: marthus-ja, marthus-moleza, marthus-nao2
+   marthus-quest1:
+     text: Então vamos começar! Primeiro você deve pegar o leite, fale com Dovis.
+     event: tag_dovis, give_RDovis
+     conditions: '!quest_dovis'
+   marthus-quest02:
+     text: Huumm, já estou sentindo o cheiro.
+     pointer: marthus-resp2_1, marthus-resp2_2, marthus-resp2_3
+     conditions: bolo_end, !contratado, !deu_bolo
+   marthus-sim2_1:
+     text: Vamos lá... *provando*
+     pointer: marthus-resp3_1
+     conditions: deu_bolo, !contratado
+   marthus-nao2_1:
+     text: Tudo bem, só não me faça esperar mais...
+   marthus-sim3_1:
+     text: Hum...
+     pointer: marthus-resp4_1
+   marthus-sim4_1:
+     text: Esse bolo está...
+     pointer: marthus-resp5_1
+   marthus-sim5_1:
+     text: Perfeito! Sem duvidas você está contratado!
+     pointer: marthus-resp6_1, marthus-resp6_2
+   marthus-sim6_1:
+     text: HAHAHAHAHA! e bom guardar essa empolgação toda para o trabalho, o que tem
+       a dizer o novo(a) peão da fazenda Marthus?
+     pointer: marthus-resp7_1, marthus-resp7_2
+   marthus-sim7_1:
+     text: Muito bem! se você quiser, pode começar agora mesmo. basta escolher o trabalho
+       que você mais gostou de fazer e começar a fazer dinheiro!
+     pointer: marthus-resp8_1, marthus-resp8_2, marthus-resp8_3
+   marthus-sim8_1:
+     text: Esse e o espirito! procure o responsavel pelo trabalho, pegue uma tarefa
+       e complete para ganhar dinheiro!
+   marthus-duvida:
+     text: Me parece que você ainda tem dúvidas, o que você não entendeu?
+     pointer: marthus-resp9_1, marthus-resp9_2, marthus-resp9_3
+     conditions: contratado
+   marthus-duvida1:
+     text: 'Basta você procurar o responsavel pelo trabalho e conversar com ele.                                                                             Exemplo:
+       Ordenhar vacas -> falar com Dovis Vaqueiro.                                         Dovis
+       vai te dar a tarefa e vai te pagar por cada balde de leite.'
+   marthus-duvida2:
+     text: As tarefas possuem valores diferentes, normalmente o responsavel pela tarefa
+       vai te falar quanto você vai receber por cada tarefa concluida, e existe uma
+       placa indicando quanto a tarefa paga.
+   marthus-nao9_1:
+     text: Vamos lá! você precisa de dinheiro e eu também, ao trabalho.
+
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+    marthus-sim:
+      text: Sim, eu quero!
+      pointer: marthus-missao
+    marthus-nao:
+      text: Vou pensar melhor...
+      pointer: marthus-nao1
+    marthus-tenta:
+      text: Eu posso tentar!
+      pointer: marthus-sim2
+    marthus-sim2:
+      text: Sim, Certeza absoluta!
+      pointer: marthus-claro
+    marthus-ja:
+      text: E pra Ja!
+      pointer: marthus-quest1
+    marthus-moleza:
+      text: Um bolo? molezinha!
+      pointer: marthus-quest1
+    marthus-nao2:
+      text: Desculpa, mas não sou confeiteiro
+      pointer: marthus-nao1
+    marthus-resp2_1:
+      text: Não sou muito bom de culinaria, espero que goste!
+      pointer: marthus-sim2_1
+      conditions: tem_bolo
+      event: take_bolo, tag_deu_bolo
+    marthus-resp2_2:
+      text: Aqui está! quentinho, feito com ingredientes frescos!
+      pointer: marthus-sim2_1
+      conditions: tem_bolo
+      event: take_bolo, tag_deu_bolo
+    marthus-resp2_3:
+      text: Falta uma coisa...
+      pointer: marthus-nao2_1
+    marthus-resp3_1:
+      text: '...'
+      pointer: marthus-sim3_1
+    marthus-resp4_1:
+      text: '...'
+      pointer: marthus-sim4_1
+    marthus-resp5_1:
+      text: '...'
+      pointer: marthus-sim5_1
+    marthus-resp6_1:
+      text: UUUUUHUUUUUUUU!
+      pointer: marthus-sim6_1
+    marthus-resp6_2:
+      text: EU SABIA QUE IA CONSIGUIR!
+      pointer: marthus-sim6_1
+    marthus-resp7_1:
+      text: Prometo que o senhor não vai se arepender
+      pointer: marthus-sim7_1
+      event: tag_contratado
+    marthus-resp7_2:
+      text: Quando posso começar?
+      pointer: marthus-sim7_1
+    marthus-resp8_1:
+      text: Estou indo agora mesmo!
+      pointer: marthus-sim8_1
+      event: tag_contratado
+    marthus-resp8_2:
+      text: Espera, eu ainda não entendi uma coisa...
+      pointer: marthus-duvida
+      event: tag_contratado
+    marthus-resp8_3:
+      text: Até mais chefe!
+      pointer: marthus-sim8_1
+      event: tag_contratado
+    marthus-resp9_1:
+      text: Onde e como faço para escolher um trabalho?
+      pointer: marthus-duvida1
+    marthus-resp9_2:
+      text: Quanto eu vou ganhar por cada trabalho?
+      pointer: marthus-duvida2
+    marthus-resp9_3:
+      text: Nada, entendi tudo!
+      pointer: marthus-nao9_1

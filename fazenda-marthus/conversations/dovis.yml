@@ -1,0 +1,121 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+conversations:
+ dovis:
+  quester: Dovis Vaqueiro
+  first: dovis-quest1, dovis-tentativa2, dovis-termino, dovis-trabalho, dovis-trabalho-concluir
+  NPC_options:
+   dovis-quest1:
+     text: Então você é o novo peão que o patrão quer contratar? vou te ajudar com
+       o leite, basta pegar esse balde aqui, e escolher uma das nossas mimosas para
+       ordenhar.
+     pointer: dovis-sim1,dovis-sim2,dovis-nao1
+     event: take_RDovis
+     conditions: dovis, !froxo, !quest_dovis
+   dovis-sim01:
+     text: Encha esse balde, e trate minhas mimosas com carinho!
+     event: dar_balde, tag_quest_dovis
+   dovis-nao02:
+     text: HAHAHAHA! Então vai para lá peão froxo!
+     event: tag_froxo
+   dovis-tentativa2:
+     text: Então o froxo voltou? vai ou não vai? se não quiser tem quem queira!
+     conditions: froxo, !quest_dovis
+     pointer: dovis-sim2, dovis-sim01, dovis-nao02
+   dovis-termino:
+     text: Então conseguiu ordenhar minhas mimosas?
+     pointer: dovis-sim11, dovis-sim12, dovis-nao12
+     conditions: quest_dovis, !quest_dovis_end
+   dovis-sucesso:
+     text: Que bom que voce se deu bem com as mimosas! Deixe o leite aqui, e fale com
+       Leonar, ele é o responsavel pelo galinheiro
+     event: tag_leonar, tag_quest_dovis_end, give_RLeonar
+   dovis-nop:
+     text: Então o que você está esperando? as mimosas não se ordenham sozinhas!
+  
+   dovis-trabalho:
+     text: Hoje as mimosas estão bem calminhas, perfeito pra tirar leite!
+     pointer: dovis-resp01, dovis-resp02, dovis-resp03, dovis-resp04
+     conditions: contratado, !Missao2Leite, !Missao10Leite, !Missao20Leite
+   dovis-nao01:
+     text: Tudo bem, estou aqui todos os dias!
+   dovis-trabalho-concluir:
+     text: Baldes cheios?
+     pointer: dovis-resp01-1, dovis-resp02-1, dovis-resp03-1, dovis-resp04-1
+     conditions: contratado
+   dovis-nao01-1:
+     text: Tudo bem, só não deixe as mimosas esperando!
+   dovis-concluido1:
+     text: Dois baldinhos? tudo bem. Uma moeda de cobre, como combinado.
+   dovis-concluido2:
+     text: Dez baldes? tudo bem. Cinco moedas de cobre, como combinado.
+   dovis-concluido3:
+     text: Vinte baldes? tudo bem. Dez moedas de cobre, como combinado.
+
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+    dovis-sim1:
+      text: Passa o balde, faço nesse instante
+      pointer: dovis-sim01
+    dovis-sim2:
+      text: Dá o balde pra cá
+      pointer: dovis-sim01
+    dovis-nao1:
+      text: Credo! não vou meter as mãos nas tetas desse bicho!
+      pointer: dovis-nao02
+    dovis-sim01:
+      text: Tomara que esse bicho não me morda!
+    dovis-nao02:
+      text: Pensando melhor... não quero não!
+      pointer: dovis-nao02
+    dovis-sim11:
+      text: Aqui está, Quentinho direto da fonte!
+      condition: balde_leite
+      event: take_balde_leite
+      pointer: dovis-sucesso
+    dovis-sim12:
+      text: Sim, Elas são adoraveis!
+      condition: balde_leite
+      event: take_balde_leite
+      pointer: dovis-sucesso
+    dovis-nao12:
+      text: Ainda não...
+      pointer: dovis-nop
+    dovis-resp01:
+      text: 2 balde de leite
+      event: tag_Missao2Leite, give_2balde
+    dovis-resp02:
+      text: 10 balde de leite
+      event: tag_Missao10Leite, give_10balde
+    dovis-resp03:
+      text: 20 balde de leite
+      event: tag_Missao20Leite, give_20balde
+    dovis-resp04:
+      text: Não tô afim de tirar leite hoje.
+      pointer: dovis-nao01
+    dovis-resp01-1:
+      text: '*entregar leite*'
+      conditions: 2leite, Missao2Leite
+      event: deltag_Missao2Leite, take_2leite, 1MoedaCobre
+      pointer: dovis-concluido1
+    dovis-resp02-1:
+      text: '*entregar leite*'
+      conditions: 10leite, Missao10Leite
+      event: deltag_Missao10Leite, take_10leite, 5MoedaCobre
+      pointer: dovis-concluido2
+    dovis-resp03-1:
+      text: '*entregar leite*'
+      conditions: 20leite, Missao20Leite
+      event: deltag_Missao20Leite, take_20leite, 10MoedaCobre
+      pointer: dovis-concluido3
+    dovis-resp04-1:
+      text: Ainda não ordenhei...
+      pointer: dovis-nao01-1
