@@ -1,0 +1,44 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+conversations:
+ stan:
+  quester: Stan Lialdo
+  first: stan-Perg01, stan-Perg03
+  
+  NPC_options:
+   stan-Perg01:
+    text: É novo aqui em Província? Fica tranquilo, vou te ensinar o básico.
+    pointer: stan-Resp01-1
+    event: take_rStanLialdo
+    conditions: stan
+
+   stan-Perg02:
+    text: Você pode usar as teclas [W] ou [S] para escolher a resposta, para confirmar você pode usar a barra de espaço ou o click direito do seu mouse, para sair (cancelar ou encerrar o diálogo) utilize o [Shift].
+    pointer: stan-Resp02-1, stan-Resp02-2
+
+   stan-Perg03:
+    text: Parece que você entendeu, agora você deve ler as placas e realizar as missões. Sua primeira missão vai ser coletar leite, fale com a Lívia, este rastreador vai te levar até ela. Não esqueça de ler as placas!
+     
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+   stan-Resp01-1:
+    text: (Aperte [espaço] para continuar)
+    pointer: stan-Perg02
+
+   stan-Resp02-1:
+    text: Beleza!
+    event: give_rLivia, tag_livia, deltag_stan
+    pointer: stan-Perg03
+
+   stan-Resp02-2:
+    text: Entendi!
+    event: give_rLivia, tag_livia, deltag_stan
+    pointer: stan-Perg03

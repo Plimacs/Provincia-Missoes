@@ -1,0 +1,131 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+events:
+  tag_tutorial: tag add tutorial
+  objtv_placa1: "objective add placa1"
+  give_rPlaca1: command ei give %player% rastreador_placa1_qtutorial 1
+  take_rPlaca1: command ei take %player% rastreador_placa1_qtutorial 64
+  msg_endPlaca1: "notify &aLeia a placa! \n&fdepois de ler, siga a bússola. io:title"
+  event_endPlaca1: command warps placa1 %player%
+  give_rStanLialdo: command ei give %player% rastreador_stan_lialdo_qtutorial 1
+  take_rStanLialdo: command ei take %player% rastreador_stan_lialdo_qtutorial 64
+  tag_stan: tag add stan
+  deltag_stan: tag del stan
+  tag_livia: tag add livia
+  deltag_livia: tag del livia
+  give_rLivia: command ei give %player% rastreador_livia_qtutorial 1
+  take_rLivia: command ei take %player% rastreador_livia_qtutorial 64
+  tag_questLeiteLivia: tag add questLeiteLivia
+  deltag_questLeiteLivia: tag del questLeiteLivia
+  tag_passsadaDePano: tag add passsadaDePano
+  deltag_passsadaDePano: tag del passsadaDePano
+  give_balde: command give %player% bucket 1
+  take_leite: take MILK_BUCKET:1
+  give_pagamento: command ei give %player% moeda_de_cobre 5
+  give_rVendedor: command ei give %player% rastreador_vendedor_qtutorial 1
+  take_rVendedor: command ei take %player% rastreador_vendedor_qtutorial 64
+  objtv_comprarItens: "objective add comprarItens"
+  give_rPlacaDeCraft: command ei give %player% rastreador_placa_craft_qtutorial 1
+  take_rPlacaDeCraft: command ei take %player% rastreador_placa_craft_qtutorial 64
+  msg_endCompra: "notify &aCompre os itens \n&fApós a compra siga o rastreador. io:title"
+  objtv_verPlaca: "objective add verPlaca"
+  msg_endPlaca: "notify &aConstrua uma varinha mágica! \n&fSiga as instruções da placa. io:title"
+  tag_fazerVarinha: tag add fazerVarinha
+  objtv_craftVarinha: "objective add craftVarinha"
+  msg_endCraftVarinha: "notify &aTeste sua varinha! \n&fAgora vamos ver se isso funciona. io:title"
+  objtv_testarVarinha: "objective add testarVarinha"
+  msg_endTestarVarinha: "notify &aNa mosca! (o゜▽゜)o☆ \n&fVamos extrair o poder máximo, vá para a próxima placa. io:title"
+  objtv_verPlaca1: "objective add verPlaca1"
+  msg_endVerPlaca1: "notify &5Ametista refinada é poder! \n&fSiga as instruções da placa. io:title"
+  give_ametista: command give %player% coal 1
+  give_carvao: command give %player% amethyst_shard 1
+  objtv_refinarAmetista: "objective add refinarAmetista"
+  objtv_refinarAmetistaMsg: "objective add refinarAmetistaMsg"
+  msg_endRefinarAmetista: "notify &5Uma arma mais forte! \n&fSiga as instruções da próxima placa. io:title"
+  tag_fazerCajado: tag add fazerCajado
+  objtv_craftCajado: "objective add craftCajado"
+  give_graveto: command give %player% stick 1
+  msg_endCraftCajado: "notify &aHora dos testes! \n&fSiga o rastreador até a próxima placa. io:title"
+  objtv_verPlaca2: "objective add verPlaca2"
+  give_rPlaca2: command ei give %player% rastreador_placa2_qtutorial 1
+  take_rPlaca2: command ei take %player% rastreador_placa2_qtutorial 64
+  msg_endPlaca2: "notify &4Hora da pancadaria! (•ˋ _ ˊ•) \n&fSiga o cheirinho de confusão. io:title"
+  objtv_verAcampamento: "objective add verAcampamento"
+  tag_matarBandidoMelee: tag add matarBandidoMelee
+  deltag_matarBandidoMelee: tag del matarBandidoMelee
+  tag_matarBandidoRanged: tag add matarBandidoRanged
+  deltag_matarBandidoRanged: tag del matarBandidoRanged
+  give_rAcampamento: command ei give %player% rastreador_acampamento_inimigo_qtutorial 1
+  take_rAcampamento: command ei take %player% rastreador_acampamento_inimigo_qtutorial 64
+  msg_endAcampamento: "notify &4Pega esse safado! (σ `д′)σ \n&fDe uma lição nesses bandidos! io:title"
+  objtv_matarBandidoMelee: "objective add matarBandidoMelee"
+  msg_endMatarBandidoMelee: "notify &6&l<Província> &f» &fArrebente 2 bandidos: \n&6&l<Província> &f» &fBandido salafrário da espada &a&l✔"
+  objtv_matarBandidoRanged: "objective add matarBandidoRanged"
+  msg_endMatarBandidoRanged: "notify &6&l<Província> &f» &fArrebente 2 bandidos: \n&6&l<Província> &f» &fBandido salafrário da besta &a&l✔"
+  objtv_finalizarBandido: "objective add finalizarBandido"
+  msg_endFinalizarBandido: "notify &4OBLITERADOS! ψ(｀∇´)ψ \n&fVá para o próximo passo. io:title"
+  give_pagamento2: command ei give %player% moeda_de_cobre 60
+  objtv_verPlaca3: "objective add verPlaca3"
+  give_rPlaca3: command ei give %player% rastreador_placa3_qtutorial 1
+  take_rPlaca3: command ei take %player% rastreador_placa3_qtutorial 64
+  tp_placaTeleporte: command warps placaTeleporte %player%
+  msg_endVerPlaca3: "notify &6Muita atenção nas placas! \n&fEsta parte é muito importante. io:title"
+  objtv_entrarNaCabine: "objective add entrarNaCabine"
+  msg_endEntrarNaCabine: "notify &aInteraja com o cristal! \n&fLembre do que você leu nas placas! io:title"
+  give_moeda_de_prata: give moeda_de_prata:1
+  take_moeda_de_prata: take moeda_de_prata:1
+  tp_terminal: command warps terminal %player%
+  tag_teleportador: tag add teleportador
+  deltag_teleportador: tag del teleportador
+  objtv_tpCabine: "objective add tpCabine"
+  tp_cabine: command warp cabineTutorial %player%
+  msg_endTpCabine: "notify &aHora do papo nerd <(▀̿▀)> \n&fAprenda sobre status e níveis! io:title"
+  give_rPortaSk: command ei give %player% rastreador_portask_qtutorial 1
+  take_rPortaSk: command ei take %player% rastreador_portask_qtutorial 64
+  objtv_portaSk: "objective add portaSk"
+  objtv_placaSk: "objective add placaSk"
+  give_rPlacaSk: command ei give %player% rastreador_placask_qtutorial 1
+  take_rPlacaSk: command ei take %player% rastreador_placask_qtutorial 64
+  give_menu: command ei give %player% menu 1
+  objtv_placaSk2: "objective add placaSk2"
+  give_machado: command give %player% iron_axe 1
+  objtv_uparColheita: "objective add uparColheita"
+  msg_endUparColheita: "notify &aMadeiraaaa! o(>ω< )o \n&fMandou bem!! Veja a próxima placa. io:title"
+  tag_gizelo_binto: tag add gizelo_binto
+  deltag_gizelo_binto: tag del gizelo_binto
+  objtv_gizeloBinto: "objective add gizeloBinto"
+  give_capuz_da_vovo: command ei give %player% capuz_da_vovo
+  msg_endGizeloBinto: "notify &bEquipe o capuz da vovó q(≧-≦q) \n&fDepois compre um porco do Josefino. io:title"
+  objtv_josefino: "objective add josefino"
+  give_rJosefino: command ei give %player% rastreador_josefino_qtutorial 1
+  take_rJosefino: command ei take %player% rastreador_josefino_qtutorial 64
+  msg_endJosefino: "notify &aFale com Josefino! \n&fCompre um porco, e vá até a próxima placa. io:title"
+  objtv_verPlaca4: "objective add verPlaca4"
+  give_rPlaca4: command ei give %player% rastreador_placa4_qtutorial 1
+  take_rPlaca4: command ei take %player% rastreador_placa4_qtutorial 64
+  give_menu: command ei give %player% menu 1
+  give_volanteDePorco: command ei give %player% volante_de_porco 1
+  objtv_montar: "objective add montar"
+  msg_endMontar: "notify &cRolêzinho de pig ₍ᐢ･⚇･ᐢ₎ \n&fFaça o percurso e leia a próxima placa. io:title"
+  objtv_verPlaca5: "objective add verPlaca5"
+  objtv_shaolin: "objective add shaolin"
+  give_rShaolin: command ei give %player% rastreador_shaolin_qtutorial 1
+  take_rShaolin: command ei take %player% rastreador_shaolin_qtutorial 64
+  objtv_verPlaca6: "objective add verPlaca6"
+  msg_endVerPlaca6: "notify &aFinalmente acabou! \n&fAgora é só pular no portal e ser feliz! io:title"
+  give_bagasBrilhantes: command give %player% glow_berries 20
+  objtv_loc1: "objective add loc1"
+  msg_endLoc1: "notify &aIsso é o básico do básico. \n&fExistem muitas outras mecânicas em Província. io:title"
+  objtv_loc2: "objective add loc2"
+  msg_endLoc2: "notify &aBem-vindo a capital! \n&fYan pode te ajudar a encontrar um trabalho."
+  give_rYan: command ei give %player% rastreador_yan_qtutorial 1
+  take_rYan: command ei take %player% rastreador_yan_qtutorial 64
+  objtv_loc3: "objective add loc3"
+  tag_tutorial_final-A: tag add tutorial_final-A

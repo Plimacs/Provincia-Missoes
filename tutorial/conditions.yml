@@ -1,0 +1,25 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+conditions:
+  tutorial: tag tutorial
+  stan: tag stan
+  livia: tag livia
+  questLeiteLivia: tag questLeiteLivia
+  passsadaDePano: tag passsadaDePano
+  leite: item MILK_BUCKET:1
+  fazerVarinha: tag fazerVarinha
+  fazerCajado: tag fazerCajado
+  matarBandidoRanged: tag matarBandidoRanged
+  matarBandidoMelee: tag matarBandidoMelee
+  teleportador: tag teleportador
+  moeda_de_prata: item moeda_de_prata:1
+  colheitalvl2: aureliumskillslevel foraging 2
+  gizelo_binto: tag gizelo_binto
+  tutorial_final-A: tag tutorial_final-A

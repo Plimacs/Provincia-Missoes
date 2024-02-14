@@ -1,0 +1,79 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+conversations:
+ livia:
+  quester: Lívia
+  first: livia-Perg01, livia-Perg03-a, livia-final
+
+  NPC_options:
+   livia-Perg01:
+    text: Você pode me ajudar? Eu preciso de leite, mas eu tenho medo das vacas.
+    pointer: livia-Resp01-a, livia-Resp01-b
+    event: take_rLivia
+    conditions: livia
+
+   livia-Perg02-a:
+    text: Ótimo! Vou estar te esperando aqui.
+
+   livia-final-b:
+    text: Tudo bem, vou passar pano pra você, não precisa apegar o leite, aqui em Província nem todas as missões têm o mesmo final. (✿◠‿◠)
+    pointer: livia-Resp02-b
+    conditions: passsadaDePano
+    
+   livia-Perg03-a:
+    text: Iai? Conseguiu?
+    pointer: livia-Resp04-a-1, livia-Resp04-a-2
+    conditions: questLeiteLivia
+
+   livia-final-a:
+    text: Obrigado! bem fácil, né? Aqui está seu pagamenento.
+    pointer: livia-Resp02-b
+    
+   livia-Perg05-a:
+    text: Por que você não conseguiu?
+    pointer: livia-Resp05-a, livia-Resp01-b
+    
+   livia-perg06-a:
+    text: As vacas estão bem atrás de você, basta olhar no curral.
+
+   livia-final:
+    text: Use este pagamento para comprar os itens necessários para a próxima missão, não esqueça de ler as placas!
+    conditions: tutorial
+
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+   livia-Resp01-a:
+    text: Passa o balde, faço nesse instante!
+    pointer: livia-Perg02-a
+    event: give_balde, tag_questLeiteLivia, deltag_livia
+
+   livia-Resp01-b:
+    text: Eu também tenho medo de vacas! o(⊙﹏⊙)o
+    pointer: livia-final-b
+    event: tag_passsadaDePano, deltag_livia
+    
+   livia-Resp04-a-1:
+    text: Sim, aqui está!
+    pointer: livia-final-a
+    conditions: leite
+
+   livia-Resp04-a-2:
+    text: Eu não consegui ;-;
+    pointer: livia-Perg05-a
+
+   livia-Resp02-b:
+    text: ... 
+    pointer: livia-final
+    event: objtv_comprarItens, take_leite, deltag_questLeiteLivia, deltag_passsadaDePano, give_pagamento, give_rVendedor
+    
+   livia-Resp05-a:
+    text: Não achei as vacas...
+    pointer: livia-perg06-a

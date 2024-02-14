@@ -1,0 +1,21 @@
+conversations:
+ gizelo_binto:
+  quester: Gizelo Binto
+  first: gizelo_binto-perg01
+  
+  NPC_options:
+   gizelo_binto-perg01:
+    text: E aí, bonitão, tudo em cima? Acho que você vai gostar de um desses. Este capuz é extremamente forte; minha vovó é quem os costura.
+    conditions: gizelo_binto
+    pointer: gizelo_binto-Resp01
+    
+   gizelo_binto-perg02:
+    text: Agora vá falar com Josefino, e compre um dos porcos dele.
+    
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+   gizelo_binto-Resp01:
+    text: Opa, valeu!
+    event: give_capuz_da_vovo, deltag_gizelo_binto
+    pointer: gizelo_binto-perg02

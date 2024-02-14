@@ -1,0 +1,41 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+objectives:
+  placa1: "location -45.739;-20.00000;2397.550;world 5 events:take_rPlaca1,give_rStanLialdo,msg_endPlaca1,event_endPlaca1,tag_stan"
+  comprarItens: "location -43.432;-20.00000;2352.449;world 5 events:objtv_verPlaca,give_rPlacaDeCraft,msg_endCompra,take_rVendedor"
+  verPlaca: "location -63.401;-20.00000;2347.748;world 6 events:take_rPlacaDeCraft,tag_fazerVarinha,msg_endPlaca,objtv_craftVarinha"
+  craftVarinha: "location -63.500;-20.00000;2347.314;world 10 events:msg_endCraftVarinha,objtv_testarVarinha conditions:!fazerVarinha"
+  testarVarinha: "arrow -67.463;-19.00000;2344.486;world 1.1 events:msg_endTestarVarinha,objtv_verPlaca1"
+  verPlaca1: "location -66.279;-20.00000;2334.443;world 5 events:msg_endVerPlaca1,give_ametista,give_carvao,objtv_refinarAmetista"
+  refinarAmetista: "smelt po_de_ametista 1 events:objtv_refinarAmetistaMsg"
+  refinarAmetistaMsg: "location -63.500;-20.00000;2334.500;world 10 events:msg_endRefinarAmetista,tag_fazerCajado,give_graveto,objtv_craftCajado"
+  craftCajado: "location -66.279;-20.00000;2334.443;world 10 events:msg_endCraftCajado,give_rPlaca2,objtv_verPlaca2 conditions:!fazerCajado"
+  verPlaca2: "location -45.754;-20.00000;2325.542;world 5 events:take_rPlaca2,msg_endPlaca2,objtv_verAcampamento,give_rAcampamento"
+  verAcampamento: "location -38.500;-20.00000;2305.454;world 10 events:take_rAcampamento,msg_endAcampamento,tag_matarBandidoMelee,tag_matarBandidoRanged,objtv_matarBandidoMelee,objtv_matarBandidoRanged"
+  matarBandidoMelee: "npckill 10 amount:1 events:msg_endMatarBandidoMelee,deltag_matarBandidoMelee,objtv_verPlaca3"
+  matarBandidoRanged: "npckill 9 amount:1 events:msg_endMatarBandidoRanged,deltag_matarBandidoRanged,objtv_finalizarBandido"
+  finalizarBandido: "location -38.500;-20.00000;2305.724;world 30 events:msg_endFinalizarBandido,give_pagamento2,objtv_verPlaca3,give_rPlaca3 conditions:!matarBandidoMelee,!matarBandidoRanged"
+  verPlaca3: "location -57.390;-20.00000;2307.820;world 3 events:msg_endVerPlaca3,take_rPlaca3,tp_placaTeleporte,objtv_entrarNaCabine"
+  entrarNaCabine: "location -62.480;-20.00000;2298.440;world 1 events:tp_terminal,tag_teleportador,objtv_tpCabine,give_moeda_de_prata,msg_endEntrarNaCabine"
+  tpCabine: "location -62.480;-20.00000;2298.440;world 3 events:msg_endTpCabine,deltag_teleportador,give_rPortaSk,objtv_portaSk"
+  portaSk: "location -57.500;-20.00000;2278.500;world 5 events:take_rPortaSk,give_rPlacaSk,objtv_placaSk"
+  placaSk: "location -66.500;-20.00000;2287.500;world 5 events:take_rPlacaSk,give_menu,objtv_placaSk2"
+  placaSk2: "location -75.500;-20.00000;2278.500;world 5 events:objtv_uparColheita,give_machado"
+  uparColheita: "location -71.500;-20.00000;2273.500;world 20 events:msg_endUparColheita,tag_gizelo_binto,objtv_gizeloBinto conditions:colheitalvl2"
+  gizeloBinto: "location -61.660;-20.00000;2273.590;world 10 events:msg_endGizeloBinto,give_rJosefino,objtv_josefino conditions:!gizelo_binto"
+  josefino: "location -41.460;-20.00000;2280.430;world 5 events:msg_endJosefino,take_rJosefino,objtv_verPlaca4"
+  verPlaca4: "location -37.340;-20.00000;2277.420;world 5 events:objtv_montar,give_volanteDePorco,give_menu"
+  montar: "ride pig events:msg_endMontar,objtv_verPlaca5"
+  verPlaca5: "location -37.420;-20.00000;2269.430;world 2 events:give_rShaolin,objtv_shaolin"
+  shaolin: "npcinteract 19 interaction:right event:objtv_verPlaca6,take_rShaolin"
+  verPlaca6: "location -50.520;-20.00000;2256.670;world 3 events:msg_endVerPlaca6,give_bagasBrilhantes,objtv_loc1"
+  loc1: "location -48.470;-20.00000;2250.470;world 4 events:msg_endLoc1,objtv_loc2"
+  loc2: "location 710.460;69.00000;652.560;terras_de_provincia 5 events:msg_endLoc2,give_rYan,objtv_loc3"
+  loc3: "location 708.440;69.00000;639.460;terras_de_provincia 5 events:take_rYan"

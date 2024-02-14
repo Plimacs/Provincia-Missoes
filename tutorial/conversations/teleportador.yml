@@ -1,0 +1,37 @@
+conversations:
+ teleportador:
+  quester: Teleportador
+  first: teleportador-perg01
+  
+  NPC_options:
+   teleportador-perg01:
+    text: Olá, eu posso te teleportar para qualquer cabine de teleporte que você já tenha passado por perto.
+    conditions: teleportador
+    pointer: teleportador-Resp01
+     
+   teleportador-perg02:
+    text: Mas toda essa praticidade e rapidez não é de graça, cada local possui um valor diferente. Para onde você quer ir?
+    pointer: teleportador-Resp02-a,teleportador-Resp02-b
+     
+   teleportador-final-a:
+    text: Teleportando...
+     
+   teleportador-final-b:
+    text: O que você fez com a moeda que você ganhou no tutorial? você precisa de 1 moeda de prata para teleportar.
+    
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+   teleportador-Resp01:
+    text: ...
+    pointer: teleportador-perg02
+    
+   teleportador-Resp02-a:
+    text: Cabine do tutorial - 1 Prata
+    conditions: moeda_de_prata
+    event: take_moeda_de_prata,tp_cabine
+    pointer: teleportador-final-a
+   teleportador-Resp02-b:
+    text: Cabine do tutorial - 1 Prata
+    conditions: "!moeda_de_prata"
+    pointer: teleportador-final-b

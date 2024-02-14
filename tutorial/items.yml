@@ -1,0 +1,8 @@
+items:
+  MILK_BUCKET: MILK_BUCKET
+  STICK: STICK
+  AMETHYST_SHARD: AMETHYST_SHARD
+  po_de_ametista: PURPLE_DYE name:§fPó_de_ametista enchants:DURABILITY:1 custom-model-data:1
+    flags:HIDE_ATTRIBUTES,HIDE_DYE,HIDE_ENCHANTS,HIDE_POTION_EFFECTS,HIDE_UNBREAKABLE
+  moeda_de_prata: IRON_NUGGET name:§fMoeda_de_prata unbreakable custom-model-data:1
+    flags:HIDE_ATTRIBUTES,HIDE_DYE,HIDE_ENCHANTS,HIDE_POTION_EFFECTS,HIDE_UNBREAKABLE
