@@ -1,0 +1,124 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+events:
+  tag_lixeiro: tag add lixeiro
+  tag_lixosvaldo: tag add lixosvaldo
+  del-tag_lixosvaldo: tag del lixosvaldo
+  msg_lixeiro-inicio: "notify &4Hora da coleta! (•ˋ _ ˊ•) \n&fVamos deixar a cidade limpinha! io:title"
+  msg_lixeiro-final: "notify &aCidade limpa! (●ˇ∀ˇ●) \n&fFale com lixosvaldo para receber sua recompença. io:title"
+  give_moeda_de_prata: command ei give %player% moeda_de_prata 1
+  give_rLixosvaldo: command ei give %player% rastreador_lixosvaldo_qlixeiro 1
+  take_rLixosvaldo: command ei take %player% rastreador_lixosvaldo_qlixeiro 64
+  tag_cidadeLimpa: tag add cidadeLimpa
+  del-tag_cidadeLimpa: tag del cidadeLimpa
+  tag_cidadeSuja: tag add cidadeSuja
+  del-tag_cidadeSuja: tag del cidadeSuja
+  objtv_cidadeLimpa: objective add cidadeLimpa
+  objtv_lixo-inicio: objective add lixo-inicio
+  give_lixo: command ei give %player% saco_de_lixo_qlixeiro 1
+  take_lixo: command ei take %player% saco_de_lixo_qlixeiro 64
+  objtv_lixo1: objective add lixo1
+  objtv_lixo2: objective add lixo2
+  objtv_lixo3: objective add lixo3
+  objtv_lixo4: objective add lixo4
+  objtv_lixo5: objective add lixo5
+  objtv_lixo6: objective add lixo6
+  objtv_lixo7: objective add lixo7
+  objtv_lixo8: objective add lixo8
+  objtv_lixo9: objective add lixo9
+  objtv_lixo10: objective add lixo10
+  objtv_lixo11: objective add lixo11
+  objtv_lixo12: objective add lixo12
+  objtv_lixo13: objective add lixo13
+  objtv_lixo14: objective add lixo14
+  objtv_lixo15: objective add lixo15
+  objtv_lixo16: objective add lixo16
+  give_rLixo1: command ei give %player% rastreador_lixo1_qlixeiro 1
+  give_rLixo2: command ei give %player% rastreador_lixo2_qlixeiro 1
+  give_rLixo3: command ei give %player% rastreador_lixo3_qlixeiro 1
+  give_rLixo4: command ei give %player% rastreador_lixo4_qlixeiro 1
+  give_rLixo5: command ei give %player% rastreador_lixo5_qlixeiro 1
+  give_rLixo6: command ei give %player% rastreador_lixo6_qlixeiro 1
+  give_rLixo7: command ei give %player% rastreador_lixo7_qlixeiro 1
+  give_rLixo8: command ei give %player% rastreador_lixo8_qlixeiro 1
+  give_rLixo9: command ei give %player% rastreador_lixo9_qlixeiro 1
+  give_rLixo10: command ei give %player% rastreador_lixo10_qlixeiro 1
+  give_rLixo11: command ei give %player% rastreador_lixo11_qlixeiro 1
+  give_rLixo12: command ei give %player% rastreador_lixo12_qlixeiro 1
+  give_rLixo13: command ei give %player% rastreador_lixo13_qlixeiro 1
+  give_rLixo14: command ei give %player% rastreador_lixo14_qlixeiro 1
+  give_rLixo15: command ei give %player% rastreador_lixo15_qlixeiro 1
+  give_rLixo16: command ei give %player% rastreador_lixo16_qlixeiro 1
+  take_rLixo1: command ei take %player% rastreador_lixo1_qlixeiro 64
+  take_rLixo2: command ei take %player% rastreador_lixo2_qlixeiro 64
+  take_rLixo3: command ei take %player% rastreador_lixo3_qlixeiro 64
+  take_rLixo4: command ei take %player% rastreador_lixo4_qlixeiro 64
+  take_rLixo5: command ei take %player% rastreador_lixo5_qlixeiro 64
+  take_rLixo6: command ei take %player% rastreador_lixo6_qlixeiro 64
+  take_rLixo7: command ei take %player% rastreador_lixo7_qlixeiro 64
+  take_rLixo8: command ei take %player% rastreador_lixo8_qlixeiro 64
+  take_rLixo9: command ei take %player% rastreador_lixo9_qlixeiro 64
+  take_rLixo10: command ei take %player% rastreador_lixo10_qlixeiro 64
+  take_rLixo11: command ei take %player% rastreador_lixo11_qlixeiro 64
+  take_rLixo12: command ei take %player% rastreador_lixo12_qlixeiro 64
+  take_rLixo13: command ei take %player% rastreador_lixo13_qlixeiro 64
+  take_rLixo14: command ei take %player% rastreador_lixo14_qlixeiro 64
+  take_rLixo15: command ei take %player% rastreador_lixo15_qlixeiro 64
+  take_rLixo16: command ei take %player% rastreador_lixo16_qlixeiro 64
+  msg_lixo-inicio: "notify &aColete o lixo! \n &fUtilize o botão direito para coletar o lixo. io:title"
+  msg_lixo1: "notify &6&l<Província> &f» &a1&f/16 Lixos coletados."
+  msg_lixo2: "notify &6&l<Província> &f» &a2&f/16 Lixos coletados."
+  msg_lixo3: "notify &6&l<Província> &f» &a3&f/16 Lixos coletados."
+  msg_lixo4: "notify &6&l<Província> &f» &a4&f/16 Lixos coletados."
+  msg_lixo5: "notify &6&l<Província> &f» &a5&f/16 Lixos coletados."
+  msg_lixo6: "notify &6&l<Província> &f» &a6&f/16 Lixos coletados."
+  msg_lixo7: "notify &6&l<Província> &f» &a7&f/16 Lixos coletados."
+  msg_lixo8: "notify &6&l<Província> &f» &a8&f/16 Lixos coletados."
+  msg_lixo9: "notify &6&l<Província> &f» &a9&f/16 Lixos coletados."
+  msg_lixo10: "notify &6&l<Província> &f» &a10&f/16 Lixos coletados."
+  msg_lixo11: "notify &6&l<Província> &f» &a11&f/16 Lixos coletados."
+  msg_lixo12: "notify &6&l<Província> &f» &a12&f/16 Lixos coletados."
+  msg_lixo13: "notify &6&l<Província> &f» &a13&f/16 Lixos coletados."
+  msg_lixo14: "notify &6&l<Província> &f» &a14&f/16 Lixos coletados."
+  msg_lixo15: "notify &6&l<Província> &f» &a15&f/16 Lixos coletados."
+  msg_lixo16: "notify &6&l<Província> &f» &a16&f/16 &aTodos os lixos foram coletados!"
+  tag_lixo1: tag add lixo1
+  tag_lixo1: tag add lixo1
+  tag_lixo2: tag add lixo2
+  tag_lixo3: tag add lixo3
+  tag_lixo4: tag add lixo4
+  tag_lixo5: tag add lixo5
+  tag_lixo6: tag add lixo6
+  tag_lixo7: tag add lixo7
+  tag_lixo8: tag add lixo8
+  tag_lixo9: tag add lixo9
+  tag_lixo10: tag add lixo10
+  tag_lixo11: tag add lixo11
+  tag_lixo12: tag add lixo12
+  tag_lixo13: tag add lixo13
+  tag_lixo14: tag add lixo14
+  tag_lixo15: tag add lixo15
+  tag_lixo16: tag add lixo16
+  del-tag_lixo1: tag del lixo1
+  del-tag_lixo2: tag del lixo2
+  del-tag_lixo3: tag del lixo3
+  del-tag_lixo4: tag del lixo4
+  del-tag_lixo5: tag del lixo5
+  del-tag_lixo6: tag del lixo6
+  del-tag_lixo7: tag del lixo7
+  del-tag_lixo8: tag del lixo8
+  del-tag_lixo9: tag del lixo9
+  del-tag_lixo10: tag del lixo10
+  del-tag_lixo11: tag del lixo11
+  del-tag_lixo12: tag del lixo12
+  del-tag_lixo13: tag del lixo13
+  del-tag_lixo14: tag del lixo14
+  del-tag_lixo15: tag del lixo15
+  del-tag_lixo16: tag del lixo16

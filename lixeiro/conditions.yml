@@ -1,0 +1,30 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+conditions:
+  lixeiro: tag lixeiro
+  lixosvaldo: tag lixosvaldo
+  cidadeLimpa: tag cidadeLimpa
+  cidadeSuja: tag cidadeSuja
+  lixo1: tag lixo1
+  lixo2: tag lixo2
+  lixo3: tag lixo3
+  lixo4: tag lixo4
+  lixo5: tag lixo5
+  lixo6: tag lixo6
+  lixo7: tag lixo7
+  lixo8: tag lixo8
+  lixo9: tag lixo9
+  lixo10: tag lixo10
+  lixo11: tag lixo11
+  lixo12: tag lixo12
+  lixo13: tag lixo13
+  lixo14: tag lixo14
+  lixo15: tag lixo15
+  lixo16: tag lixo16

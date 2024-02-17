@@ -1,0 +1,28 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+objectives:
+  lixo-inicio: "location 739.5800;68.00000;735.4900;terras_de_provincia 7 events:msg_lixo-inicio"
+  lixo1: "npcinteract 24 interaction:right events:msg_lixo1,take_rLixo1,del-tag_lixo1,give_rLixo2,objtv_lixo2,give_lixo"
+  lixo2: "npcinteract 25 interaction:right events:msg_lixo2,take_rLixo2,del-tag_lixo2,give_rLixo3,objtv_lixo3,give_lixo"
+  lixo3: "npcinteract 26 interaction:right events:msg_lixo3,take_rLixo3,del-tag_lixo3,give_rLixo4,objtv_lixo4,give_lixo"
+  lixo4: "npcinteract 27 interaction:right events:msg_lixo4,take_rLixo4,del-tag_lixo4,give_rLixo5,objtv_lixo5,give_lixo"
+  lixo5: "npcinteract 28 interaction:right events:msg_lixo5,take_rLixo5,del-tag_lixo5,give_rLixo6,objtv_lixo6,give_lixo"
+  lixo6: "npcinteract 29 interaction:right events:msg_lixo6,take_rLixo6,del-tag_lixo6,give_rLixo7,objtv_lixo7,give_lixo"
+  lixo7: "npcinteract 30 interaction:right events:msg_lixo7,take_rLixo7,del-tag_lixo7,give_rLixo8,objtv_lixo8,give_lixo"
+  lixo8: "npcinteract 31 interaction:right events:msg_lixo8,take_rLixo8,del-tag_lixo8,give_rLixo9,objtv_lixo9,give_lixo"
+  lixo9: "npcinteract 32 interaction:right events:msg_lixo9,take_rLixo9,del-tag_lixo9,give_rLixo10,objtv_lixo10,give_lixo"
+  lixo10: "npcinteract 33 interaction:right events:msg_lixo10,take_rLixo10,del-tag_lixo10,give_rLixo11,objtv_lixo11,give_lixo"
+  lixo11: "npcinteract 34 interaction:right events:msg_lixo11,take_rLixo11,del-tag_lixo11,give_rLixo12,objtv_lixo12,give_lixo"
+  lixo12: "npcinteract 35 interaction:right events:msg_lixo12,take_rLixo12,del-tag_lixo12,give_rLixo13,objtv_lixo13,give_lixo"
+  lixo13: "npcinteract 36 interaction:right events:msg_lixo13,take_rLixo13,del-tag_lixo13,give_rLixo14,objtv_lixo14,give_lixo"
+  lixo14: "npcinteract 37 interaction:right events:msg_lixo14,take_rLixo14,del-tag_lixo14,give_rLixo15,objtv_lixo15,give_lixo"
+  lixo15: "npcinteract 38 interaction:right events:msg_lixo15,take_rLixo15,del-tag_lixo15,give_rLixo16,objtv_lixo16,give_lixo"
+  lixo16: "npcinteract 39 interaction:right events:msg_lixo16,msg_lixeiro-final,take_rLixo16,del-tag_lixo16,give_rLixosvaldo,tag_lixosvaldo,give_lixo"
+  cidadeLimpa: "delay 36000 seconds events:tag_cidadeSuja,del-tag_cidadeLimpa"

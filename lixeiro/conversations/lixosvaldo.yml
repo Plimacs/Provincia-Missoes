@@ -1,0 +1,66 @@
+#===================================================================+
+#    ____                            __                  _          |
+#   / __ \   _____  ____   _   __   /_/  ____   _____   (_)  ____ _ |
+#  / /_/ /  / ___/ / __ \ | | / /  / /  / __ \ / ___/  / /  / __ `/ |
+# / ____/  / /    / /_/ / | |/ /  / /  / / / // /__   / /  / /_/ /  |
+#/_/      /_/     \____/  |___/  /_/  /_/ /_/ \___/  /_/   \__,_/   |
+#                                                                   |
+#===================================================================+
+
+conversations:
+ lixosvaldo:
+  quester: Lixosvaldo
+  first: lixosvaldo-perg01, lixosvaldo-perg04, lixosvaldo-cidadeLimpa, lixosvaldo-perg05
+  
+  NPC_options:
+   lixosvaldo-perg01:
+    text: Olá, gostaria de me ajudar na coleta de lixo? É bem simples, basta coletar os sacos de lixo pela cidade e trazer pra mim, no total são 16 sacos, e eu vou te pagar 1 moeda de prata.
+    pointer: lixosvaldo-resp01-a, lixosvaldo-resp01-b
+    conditions: "!cidadeLimpa,!lixosvaldo,!lixeiro,!cidadeSuja"
+   
+   lixosvaldo-perg02:
+    text: Você pode começar agora mesmo! Siga os rastreadores de lixo, colete os 16 sacos de lixo, e volte aqui para receber seu pagamento.
+    pointer: lixosvaldo-resp02-a, lixosvaldo-resp01-b
+
+   lixosvaldo-cancelado:
+    text: Tudo bem, quando precisar fazer um dinheiro é só vir aqui!
+
+   lixosvaldo-perg03:
+    text: Sempre que você ver lixo pelas ruas você pode vir aqui pedir para coletar, você sempre será bem pago!
+
+   lixosvaldo-perg04:
+    text: Muito bem! aqui está seu pagamento. Sempre que a cidade estiver suja, você pode vir aqui.
+    conditions: lixosvaldo
+    event: take_lixo,del-tag_lixosvaldo,take_rLixosvaldo,give_moeda_de_prata,tag_cidadeLimpa,objtv_cidadeLimpa
+
+   lixosvaldo-cidadeLimpa:
+    text: A cidade ainda está limpa! Volte aqui quando ela estiver suja, cheia de sacos de lixo.
+    conditions: cidadeLimpa
+
+   lixosvaldo-perg05:
+    text: Pronto pra mais um dia de trabalho duro?
+    pointer: lixosvaldo-resp03-a, lixosvaldo-resp01-b
+    conditions: cidadeSuja
+
+   lixosvaldo-perg06:
+    text: Ótimo! Hoje a cidade está bem suja, colete 16 sacos de lixo e traga pra mim.
+
+#-----------------------------------PROVÍNCIA-----------------------------------   
+
+  player_options:
+   lixosvaldo-resp01-a:
+    text: Sim! Quando eu começo?
+    pointer: lixosvaldo-perg02
+   lixosvaldo-resp01-b:
+    text: Não, deixa pra próxima...
+    pointer: lixosvaldo-cancelado
+
+   lixosvaldo-resp02-a:
+    text: Estou indo agora mesmo!
+    pointer: lixosvaldo-perg03
+    event: objtv_lixo-inicio,objtv_lixo1,give_rLixo1,msg_lixeiro-inicio,tag_lixo1,tag_lixo2,tag_lixo3,tag_lixo4,tag_lixo5,tag_lixo6,tag_lixo7,tag_lixo8,tag_lixo9,tag_lixo10,tag_lixo11,tag_lixo12,tag_lixo13,tag_lixo14,tag_lixo15,tag_lixo16
+
+   lixosvaldo-resp03-a:
+    text: Com toda certeza!
+    pointer: lixosvaldo-perg06
+    event: del-tag_cidadeSuja,objtv_lixo-inicio,objtv_lixo1,give_rLixo1,msg_lixeiro-inicio,tag_lixo1,tag_lixo2,tag_lixo3,tag_lixo4,tag_lixo5,tag_lixo6,tag_lixo7,tag_lixo8,tag_lixo9,tag_lixo10,tag_lixo11,tag_lixo12,tag_lixo13,tag_lixo14,tag_lixo15,tag_lixo16
