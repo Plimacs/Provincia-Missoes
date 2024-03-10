@@ -9,7 +9,7 @@
 
 conversations:
  iniciador:
-  quester: iniciador
+  quester: Blink
   first: inicio, iniciado
   
   NPC_options:

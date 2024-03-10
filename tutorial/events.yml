@@ -8,11 +8,17 @@
 #===================================================================+
 
 events:
+  objtv_placa0: "objective add placa0"
+  tp_placa0: command warps placa0 %player%
+  give_rplacaInicio: command ei give %player% rastreador_placaInicio_qtutorial 1
+  take_rplacaInicio: command ei take %player% rastreador_placaInicio_qtutorial 64
+  msg_placa0: "notify &aLeia a placa! \n&fdepois de ler, siga a bússola. io:title"
+  tp_placaInicio: command warps placaInicio %player%
+  objtv_placaInicio: "objective add placaInicio"
   tag_tutorial: tag add tutorial
   objtv_placa1: "objective add placa1"
   give_rPlaca1: command ei give %player% rastreador_placa1_qtutorial 1
   take_rPlaca1: command ei take %player% rastreador_placa1_qtutorial 64
-  msg_endPlaca1: "notify &aLeia a placa! \n&fdepois de ler, siga a bússola. io:title"
   event_endPlaca1: command warps placa1 %player%
   give_rStanLialdo: command ei give %player% rastreador_stan_lialdo_qtutorial 1
   take_rStanLialdo: command ei take %player% rastreador_stan_lialdo_qtutorial 64

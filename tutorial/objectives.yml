@@ -8,7 +8,9 @@
 #===================================================================+
 
 objectives:
-  placa1: "location -45.739;-20.00000;2397.550;world 5 events:take_rPlaca1,give_rStanLialdo,msg_endPlaca1,event_endPlaca1,tag_stan"
+  placa0: "location -50.380;-13.50000;2439.420;world 5 events:give_rplacaInicio,objtv_placaInicio,msg_placa0,tp_placa0"
+  placaInicio: "location -50.680;-12.00000;2424.670;world 5 events:take_rplacaInicio,tp_placaInicio"
+  placa1: "location -45.739;-20.00000;2397.550;world 5 events:take_rPlaca1,give_rStanLialdo,msg_placa0,event_endPlaca1,tag_stan"
   comprarItens: "location -43.432;-20.00000;2352.449;world 5 events:objtv_verPlaca,give_rPlacaDeCraft,msg_endCompra,take_rVendedor"
   verPlaca: "location -63.401;-20.00000;2347.748;world 6 events:take_rPlacaDeCraft,tag_fazerVarinha,msg_endPlaca,objtv_craftVarinha"
   craftVarinha: "location -63.500;-20.00000;2347.314;world 10 events:msg_endCraftVarinha,objtv_testarVarinha conditions:!fazerVarinha"
